@@ -1,129 +1,129 @@
-
-
 <!DOCTYPE html>
 <html>
-    <title>Assignment Writer</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="./style.css">
-	<script src="htmlToCanvas.js"> 
-	</script> 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.3/jspdf.min.js"></script>
-    <body>
-    <div id="leaves">
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i> 
-    </div>
-        
-    <div class="controls">
-        <div class="pagination-container full-width-container">
-          <div class="sized-container">
-            <div class="pagination"></div>
-          </div>
-        </div>
-        <div class="viewport full-width-container">
-          <ul class="slide-container">
-            <li class="slide" data-tag="Font Size">
-              <div class="sized-container">
-                <h1>Lets Make the writing look real.</h1>
-                <h1>We will write each word between the size number you specify.</h1>
-                  <div class="min-max-slider" data-legendnum="2">
-                      <label for="min">Minimum Font Size</label><br>
-                      <input onchange="changeFont()" id="min" class="min font-size-min" name="min" type="number" step="1" min="10" max="50" value="30"/><br>
-                      <label for="max">Maximum Font Size</label><br>
-                      <input onchange="changeFont()" id="max" class="max font-size-max" name="max" type="number" step="1" min="10" max="50" value="35"/>
-                  </div>
-              </div>
-            </li>
-            <li class="slide" data-tag="Word Spacing">
-              <div class="sized-container">
-                <h1>Let's Randomise Spacing Between Each Word.</h1>
-                  <div class="min-max-slider" data-legendnum="2">
-                      <label for="min">Minimum Word Spacing</label><br>
-                      <input onchange="changeFont()" id="min" class="min word-spacing-min" name="min" type="number" step="1" min="4" max="20" value="5"/><br>
-                      <label for="max">Maximum Word Spacing</label><br>
-                      <input onchange="changeFont()" id="max" class="max word-spacing-max" name="max" type="number" step="1" min="4" max="20" value="7"/>
-                  </div>
-              </div>
-            </li>
-            <li class="slide" data-tag="Letter Spacing">
-              <div class="sized-container">
-                <h1>Let's Set a number for Spacing Between Letters.</h1>
-                  <div class="min-max-slider" data-legendnum="2">
-                      <label for="min">Minimum Letter Spacing</label><br>
-                      <input onchange="changeFont()" id="min" class="min letter-spacing-min" name="min" type="number" step="1" min="-10" max="-2" value="-5"/><br>
-                      <label for="max">Maximum Letter Spacing</label><br>
-                      <input onchange="changeFont()" id="max" class="max letter-spacing-max" name="max" type="number" step="1" min="-10" max="-2" value="-3"/>
-                  </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div class="full-width-container">
-          <div class="button-container sized-container">
-            <button class="next">next</button>
-            <button class="previous">previous</button>
-          </div>
-        </div>
-    </div>
-    <div class="toggle-btn">
-        <div class="formbox">
-          <a onclick="takeshot()" href="#popup">Take Screen Shot</a>
-          <a id="toggle-controls">Toggle Controls</a>
-        </div>
-        <div id="popup">
-          <div class="popup-card">
-            <div id="output" class="popup-card-content">
-              <a href="#">Close &times;</a>
-            </div>
-          </div>
-        </div>
-    </div> 
+<title>Assignment Writer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./style.css">
+<script src="htmlToCanvas.js">
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.3/jspdf.min.js"></script>
 
-    <!-- Page Content -->
-    <div class="container">
-        <div class="image-container">
-            <p contenteditable="true"  wrap="hard" spellcheck="false" class="input-form" type="number">Let's Save Paper.....</p>
-        </div>
-        <div class="image-container">
-            <p contenteditable="true"  wrap="hard" spellcheck="false" class="input-form" type="number"></p>
-        </div>
-        <div class="image-container">
-            <p contenteditable="true"  wrap="hard" spellcheck="false" class="input-form" type="number"></p>
-        </div>
-        <div class="image-container">
-            <p contenteditable="true"  wrap="hard" spellcheck="false" class="input-form" type="number"></p>
-        </div>
-        <div class="image-container">
-            <p contenteditable="true"  wrap="hard" spellcheck="false" class="input-form" type="number"></p>
-        </div>
-        <div class="image-container">
-            <p contenteditable="true"  wrap="hard" spellcheck="false" class="input-form" type="number"></p>
-        </div>
-        <div class="image-container">
-            <p contenteditable="true"  wrap="hard" spellcheck="false" class="input-form" type="number"></p>
-        </div>
-        <div class="image-container">
-            <p contenteditable="true"  wrap="hard" spellcheck="false" class="input-form" type="number"></p>
-        </div>
-    </div>
-    <script src="./script.js"></script>  
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-        function toggleSidebar(ref){
+<body>
+	<div id="leaves">
+		<i></i>
+		<i></i>
+		<i></i>
+		<i></i>
+		<i></i>
+		<i></i>
+		<i></i>
+		<i></i>
+		<i></i>
+		<i></i>
+		<i></i>
+		<i></i>
+		<i></i>
+		<i></i>
+		<i></i>
+	</div>
+
+	<div class="controls">
+		<div class="pagination-container full-width-container">
+			<div class="sized-container">
+				<div class="pagination"></div>
+			</div>
+		</div>
+		<div class="viewport full-width-container">
+			<ul class="slide-container">
+				<li class="slide" data-tag="Font Size">
+					<div class="sized-container">
+						<h1>Lets Make the writing look real.</h1>
+						<h1>We will write each word between the size number you specify.</h1>
+						<div class="min-max-slider" data-legendnum="2">
+							<label for="min">Minimum Font Size</label><br>
+							<input onchange="changeFont()" id="min" class="min font-size-min" name="min" type="number" step="1" min="10" max="50" value="30"/><br>
+							<label for="max">Maximum Font Size</label><br>
+							<input onchange="changeFont()" id="max" class="max font-size-max" name="max" type="number" step="1" min="10" max="50" value="35"/>
+                  </div>
+						</div>
+				</li>
+				<li class="slide" data-tag="Word Spacing">
+					<div class="sized-container">
+						<h1>Let's Randomise Spacing Between Each Word.</h1>
+						<div class="min-max-slider" data-legendnum="2">
+							<label for="min">Minimum Word Spacing</label><br>
+							<input onchange="changeFont()" id="min" class="min word-spacing-min" name="min" type="number" step="1" min="4" max="20" value="5"/><br>
+							<label for="max">Maximum Word Spacing</label><br>
+							<input onchange="changeFont()" id="max" class="max word-spacing-max" name="max" type="number" step="1" min="4" max="20" value="7"/>
+                  </div>
+						</div>
+				</li>
+				<li class="slide" data-tag="Letter Spacing">
+					<div class="sized-container">
+						<h1>Let's Set a number for Spacing Between Letters.</h1>
+						<div class="min-max-slider" data-legendnum="2">
+							<label for="min">Minimum Letter Spacing</label><br>
+							<input onchange="changeFont()" id="min" class="min letter-spacing-min" name="min" type="number" step="1" min="-10" max="-2" value="-5"/><br>
+							<label for="max">Maximum Letter Spacing</label><br>
+							<input onchange="changeFont()" id="max" class="max letter-spacing-max" name="max" type="number" step="1" min="-10" max="-2" value="-3"/>
+                  </div>
+						</div>
+				</li>
+			</ul>
+		</div>
+		<div class="full-width-container">
+			<div class="button-container sized-container">
+				<button class="next">next</button>
+				<button class="previous">previous</button>
+			</div>
+		</div>
+	</div>
+	<div class="toggle-btn">
+		<div class="formbox">
+			<a onclick="takeshot()" href="#popup">Take Screen Shot</a>
+			<a id="toggle-controls">Toggle Controls</a>
+		</div>
+		<div id="popup">
+			<div class="popup-card">
+				<div id="output" class="popup-card-content">
+					<a href="#">Close &times;</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Page Content -->
+	<div class="container">
+		<div class="image-container">
+			<p contenteditable="true" wrap="hard" spellcheck="false" class="input-form" type="number">Let's Save
+				Paper.....</p>
+		</div>
+		<div class="image-container">
+			<p contenteditable="true" wrap="hard" spellcheck="false" class="input-form" type="number"></p>
+		</div>
+		<div class="image-container">
+			<p contenteditable="true" wrap="hard" spellcheck="false" class="input-form" type="number"></p>
+		</div>
+		<div class="image-container">
+			<p contenteditable="true" wrap="hard" spellcheck="false" class="input-form" type="number"></p>
+		</div>
+		<div class="image-container">
+			<p contenteditable="true" wrap="hard" spellcheck="false" class="input-form" type="number"></p>
+		</div>
+		<div class="image-container">
+			<p contenteditable="true" wrap="hard" spellcheck="false" class="input-form" type="number"></p>
+		</div>
+		<div class="image-container">
+			<p contenteditable="true" wrap="hard" spellcheck="false" class="input-form" type="number"></p>
+		</div>
+		<div class="image-container">
+			<p contenteditable="true" wrap="hard" spellcheck="false" class="input-form" type="number"></p>
+		</div>
+	</div>
+	<script src="./script.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+		function toggleSidebar(ref){
           document.getElementById("sidebar").classList.toggle('active');
         }
         $(document).ready(function(){
@@ -134,7 +134,8 @@
             $(".modal").fadeOut();
           });
         });        
-    </script>
+	</script>
 
-    </body>
+</body>
+
 </html>

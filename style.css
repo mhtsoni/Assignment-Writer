@@ -5,6 +5,9 @@
 body{
     margin:0px;
 }
+img{
+  display:inline;
+}
 .container{
     width: 595px;
     height: 842px;
